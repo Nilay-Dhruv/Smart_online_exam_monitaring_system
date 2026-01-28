@@ -21,9 +21,10 @@ app.register_blueprint(student_bp)
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True) 
 
 def get_db():
-    conn = sqlite3.connect('exam_system.db')
+    conn = sqlite3.connect(DB_PATH, check_same_thread=False)
     conn.row_factory = sqlite3.Row
     return conn
+
 
 def hash_password(password):
     return generate_password_hash(password)
