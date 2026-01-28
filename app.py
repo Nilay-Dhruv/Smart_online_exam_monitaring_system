@@ -20,6 +20,9 @@ app.register_blueprint(student_bp)
 
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True) 
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DB_PATH = os.path.join(BASE_DIR, "exam_system.db")
+
 def get_db():
     conn = sqlite3.connect(DB_PATH, check_same_thread=False)
     conn.row_factory = sqlite3.Row
