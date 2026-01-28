@@ -1,0 +1,10 @@
+flask
+gunicorn
+flask-cors
+mediapipe
+numpy
+opencv-python-headless
+openpyxl
+pdfplumber
+python-docx
+werkzeug
