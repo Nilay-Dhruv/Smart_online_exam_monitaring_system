@@ -1,5 +1,4 @@
 flask
-gunicorn
 flask-cors
 mediapipe
 numpy
@@ -8,3 +7,4 @@ openpyxl
 pdfplumber
 python-docx
 werkzeug
+
