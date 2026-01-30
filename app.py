@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify, session, redirect, url_for, flash
+from flask import Flask, render_template, request, jsonify, session, redirect, url_for, flash,send_file
 from flask_cors import CORS
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
@@ -173,6 +173,14 @@ def datetimeformat(value, format='%H:%M:%S'):
 def logout():
     session.clear()
     return redirect(url_for('index'))
+
+@app.route("/admin/download-db")
+def download_db():
+    return send_file(
+        DB_PATH,
+        as_attachment=True,
+        download_name="exam_system.db"
+    )
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
