@@ -1,7 +1,4 @@
 flask
 flask-cors
-mediapipe
-numpy
-opencv-python-headless
 openpyxl
 werkzeug
